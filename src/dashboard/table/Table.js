@@ -8,6 +8,9 @@ import stats from "../../assets/img/stats.png";
 import file from "../../assets/img/file.png";
 import calendar from "../../assets/img/calendar.png";
 
+
+const imgHeight = '20px';
+
 export default function TableExample(props) {
   console.log(
     "Object.values(tableHeaders : ",
@@ -29,32 +32,18 @@ export default function TableExample(props) {
             <CampDetail />
           </Td>
           <Td>
-            <img src={price} alt="none" /> view price
+            <ImageTextPair text="View price" img={price}/>
+              
           </Td>
           <Td>
-            <div style={{display:'flex'}}>
-              <div><img src={file} alt="none" /> csv</div>
-              <div><img src={stats} alt="none" /> Reports</div>
-              <div><img src={calendar} alt="none" /> Schedule Again</div>
+            <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap:'wrap'}}>
+              <ImageTextPair text="csv" img={file}/>
+              <ImageTextPair text="Reports" img={stats}/>
+              <ImageTextPair text="Schedule Again" img={calendar}/>
             </div>
           </Td>
         </Tr>
-        <Tr>
-          <Td>item 1</Td>
-          <Td>
-            <CampDetail />
-          </Td>
-          <Td>
-            <img src={price} alt="none" /> view price
-          </Td>
-          <Td>
-            <div style={{display:'flex'}}>
-              <div><img src={file} alt="none" /> csv</div>
-              <div><img src={stats} alt="none" /> Reports</div>
-              <div><img src={calendar} alt="none" /> Schedule Again</div>
-            </div>
-          </Td>
-        </Tr>
+        
       </Tbody>
     </Table>
   );
@@ -63,3 +52,7 @@ export default function TableExample(props) {
 const CampDetail = props => {
   return <div>hii</div>;
 };
+
+
+const ImageTextPair = (props) => <div style={{ display: 'flex', flexDirection: 'row',padding:'6px' }}>   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}><img src={props.img} alt="none" style={{ height: imgHeight }} /> </div><div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center',paddingLeft:'5px',fontSize:'12px' }}>{props.text}</div> </div>
+              

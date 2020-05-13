@@ -8,7 +8,7 @@ class MyTab extends Component {
         style={{
           display: "flex",
           margin: "0 0 20px 0",
-          borderBottom:'1px solid black'
+          borderBottom:'1px solid #F1F1F4'
         }}
       >
         {this.props.tabList.map((tabItem,indx) => (

@@ -1,3 +1,5 @@
+$green-selected: #7AB114 ;
+
 .common-tab{
     width: 200px;
     height: 25px;
@@ -6,10 +8,18 @@
 }
 .selected-tab{
     
-    color:green;
-    border-bottom: 5px solid green;
+    color:$green-selected;
+    border-bottom: 5px solid $green-selected;
 }
 .unselected-tab{
    
-    color:inherit;
+    color:#2A3D6E;
+}
+@media screen and (max-width: 40em) {
+    .common-tab{
+        width: 200px;
+        height: 45px;
+        padding: 0 0 0 10px;
+        cursor: pointer;
+    }
 }

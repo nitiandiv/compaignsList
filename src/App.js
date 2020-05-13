@@ -14,25 +14,35 @@ class App extends Component {
     return (
       <div
         style={{
-          width: "80vw",
+          width: "100%",
           display: "flex",
           flexDirection: "column",
          // border:'1px solid black'
+         alignItems:'center',
+        // justifyContent:'center'
+        height:'100%'
         }}
       >
+        <div 
+        style={{
+          width: "80%",
+          height:'100%'
+        }}
+        >
         <div
-        style={{height:80,}}>
+        style={{height:'20%',fontSize:30,display: "flex",alignItems:'center',fontWeight:800,color:'#2A3D6E'}}>
           Manage Campaigns
           </div>
-        <div>
+        <div style={{height:'10%'}}>
           <MyTab 
             tabList={tabList}
             currentTab={this.state.currentTab}
             handleTabEvent={item=>this.setState({currentTab:item})}
           />
         </div>
-        <div>
+        <div style={{height:'70%'}}>
           <Table />
+        </div>
         </div>
       </div>
     );
